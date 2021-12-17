@@ -1,0 +1,21 @@
+{
+  "name": "eslint-config-af-22",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Viacheslav Makarov <vvmakarov@bazilio.ru>",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "devDependencies": {
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3"
+  },
+  "peerDependencies": {
+    "eslint": ">= 8",
+    "eslint-config-airbnb-base": ">= 15",
+    "eslint-plugin-import": ">= 2.25.3"
+  }
+}
