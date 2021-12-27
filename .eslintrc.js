@@ -16,7 +16,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [], // ?
-  root: true, // ?
+  root: true, //
   rules: {
     'comma-dangle': ['warn', 'always-multiline'],
     'consistent-return': 'off',

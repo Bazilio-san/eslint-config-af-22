@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-af-22",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
   "author": "Viacheslav Makarov <vvmakarov@bazilio.ru>",
   "license": "MIT",
