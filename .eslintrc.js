@@ -15,7 +15,7 @@ module.exports = {
     parser: 'babel-eslint',
     sourceType: 'module'
   },
-  plugins: [], // ?
+  plugins: ['prefer-arrow', 'import'], // ?
   root: true, //
   rules: {
     'comma-dangle': ['warn', 'always-multiline'],
