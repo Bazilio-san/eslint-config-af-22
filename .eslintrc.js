@@ -4,18 +4,18 @@ module.exports = {
     es6: true,
     browser: true, // ?
     jest: true, // ?
-    mocha: true // ?
+    mocha: true, // ?
   },
   extends: [
-    'airbnb-base'
+    'airbnb-base',
   ],
   globals: {},
   parserOptions: {
     ecmaVersion: 2021,
     parser: 'babel-eslint',
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: ['prefer-arrow', 'import'], // ?
+  plugins: ['prefer-arrow', 'import', 'unused-imports'], // ?
   root: true, //
   rules: {
     'comma-dangle': ['warn', 'always-multiline'],
@@ -32,7 +32,7 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     // https://eslint.org/docs/rules/indent#enforce-consistent-indentation-indent
-    indent: ['error', 2, {SwitchCase: 1, ignoredNodes: ['TemplateLiteral', 'MemberExpression']}],
+    indent: ['error', 2, { SwitchCase: 1, ignoredNodes: ['TemplateLiteral', 'MemberExpression'] }],
     'linebreak-style': ['error', 'unix'],
     'max-len': ['warn', 200],
     'no-console': 'warn',
@@ -41,21 +41,26 @@ module.exports = {
     'no-plusplus': 'off',
     'no-trailing-spaces': 'error',
     'no-underscore-dangle': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off', // or "@typescript-eslint/no-unused-vars": "off",
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+    ],
     'object-curly-newline': [
       'error',
       {
-        ObjectExpression: {multiline: true, minProperties: 5},
-        ObjectPattern: {multiline: true},
+        ObjectExpression: { multiline: true, minProperties: 5 },
+        ObjectPattern: { multiline: true },
         ImportDeclaration: 'never',
-        ExportDeclaration: {multiline: true, minProperties: 5}
-      }
+        ExportDeclaration: { multiline: true, minProperties: 5 },
+      },
     ],
     'object-curly-spacing': ['error', 'always'],
-    'prefer-destructuring': ['error', {object: true, array: false}],
+    'prefer-destructuring': ['error', { object: true, array: false }],
     'prefer-object-spread': 'error',
     'prefer-promise-reject-errors': 'off',
-    quotes: ['error', 'single', {allowTemplateLiterals: true}],
-    'space-before-function-paren': ['error', 'always']
-  }
+    quotes: ['error', 'single', { allowTemplateLiterals: true }],
+    'space-before-function-paren': ['error', 'always'],
+  },
 };
