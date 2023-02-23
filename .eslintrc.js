@@ -32,7 +32,20 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     // https://eslint.org/docs/rules/indent#enforce-consistent-indentation-indent
-    indent: ['error', 2, { SwitchCase: 1, ignoredNodes: ['TemplateLiteral', 'MemberExpression'] }],
+    indent: [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+        ignoredNodes: [
+          'TemplateLiteral',
+          'MemberExpression',
+          'FunctionExpression > .params[decorators.length > 0]',
+          'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
+          'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key',
+        ],
+      },
+    ],
     'linebreak-style': ['error', 'unix'],
     'max-len': ['warn', 200],
     'no-console': 'warn',
